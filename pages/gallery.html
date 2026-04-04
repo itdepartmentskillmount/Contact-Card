@@ -50,7 +50,7 @@
       }
     }
 
-    function renderGallery() {
+    async function renderGallery() {
       const grid = document.getElementById('galleryGrid');
       grid.innerHTML = '';
       
@@ -60,29 +60,28 @@
         grid.appendChild(skeleton);
       }
 
-      const instaLink = 'https://www.instagram.com/riz_wa_n/';
+      let users = [];
+      try {
+        const res = await fetch('../user/users.json', { cache: 'no-store' });
+        users = await res.json();
+      } catch (e) {
+        console.error('Failed to load user/users.json', e);
+      }
+
+      const username = getUsernameFromUrl();
+      const currentUser = (username ? users.find(u => u.username === username) : null) || users[0];
 
       setTimeout(() => {
         grid.innerHTML = '';
         
-        const mockFetchedInstagramImages = [
-           "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=600",
-           "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=400",
-           "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600",
-           "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=400",
-           "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=600",
-           "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=400",
-           "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=600",
-           "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400",
-           "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&q=80&w=600"
-        ];
+        const userGallery = (currentUser && currentUser.gallery) ? currentUser.gallery : [];
 
-        if (mockFetchedInstagramImages.length === 0) {
-          grid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted); margin-top:20px;">No images found on Instagram.</p>';
+        if (userGallery.length === 0) {
+          grid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted); margin-top:20px;">No images found.</p>';
           return;
         }
 
-        mockFetchedInstagramImages.forEach((url, i) => {
+        userGallery.forEach((url, i) => {
           const item = document.createElement('div');
           item.className = 'gallery-item';
           
