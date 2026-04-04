@@ -37,7 +37,7 @@ body {
   background-color: #010101;
   background-image: linear-gradient(var(--glass-overlay), var(--glass-overlay));
   backdrop-filter: blur(20px);
-  border-radius: 20px;
+  /* border-radius: 20px; */
   overflow: hidden;
   position: relative;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
