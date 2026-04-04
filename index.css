@@ -216,6 +216,18 @@ body {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
+.accordion-actions .call-now-pill {
+  padding: 5px 12px;
+  font-size: 11px;
+  gap: 6px;
+}
+
+.accordion-actions .call-now-pill i,
+.accordion-actions .call-now-pill svg {
+  width: 14px;
+  height: 14px;
+}
+
 /* Social Pills */
 .social-pills {
   display: flex;
