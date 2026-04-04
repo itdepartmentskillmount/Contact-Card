@@ -342,7 +342,7 @@ body {
 .contact-list {
   margin: 0px 0 30px;
   display: flex;
-  padding: 15px;
+  padding: 10px;
   flex-direction: column;
   /* gap: 12px; */
   border-radius: 0 10px 10px 10px;
