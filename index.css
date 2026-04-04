@@ -358,13 +358,13 @@ body {
   margin-top: 10px;
 }
 
-.contact-item:hover {
+/* .contact-item:hover {
   background-color: #232326;
   border-color: rgba(255, 255, 255, 0.15);
-}
+} */
 
 .contact-header {
-  padding: 14px 18px 4px;
+  padding: 14px 18px 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -375,6 +375,10 @@ body {
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: rgba(0, 0, 0, 0.1);
+}
+
+.contact-item.active .contact-header {
+  padding: 14px 18px 4px;
 }
 
 .contact-item.active .contact-body {
