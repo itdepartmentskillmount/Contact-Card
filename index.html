@@ -18,7 +18,7 @@
   <div class="container">
     <!-- Top Navigation -->
     <nav class="top-nav">
-      <button class="nav-btn">
+      <button class="nav-btn" onclick="openAboutPage()">
         <i class="fa-solid fa-circle-info"></i>
         About Me
       </button>
@@ -435,6 +435,15 @@ END:VCARD`;
         window.location.href = `./pages/gallery.html?username=${username}`;
       } else {
         window.location.href = './pages/gallery.html';
+      }
+    }
+
+    function openAboutPage() {
+      const username = getUsernameFromUrl();
+      if (username) {
+        window.location.href = `./pages/about.html?username=${username}`;
+      } else {
+        window.location.href = './pages/about.html';
       }
     }
 
