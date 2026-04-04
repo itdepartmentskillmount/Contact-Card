@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery</title>
+  <link rel="icon" type="image/svg+xml" href="https://skillmount.com/icons/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container" style="min-height: 100vh; padding: 0px !important; display: flex; flex-direction: column; justify-content: center;">
+    <!-- Gallery Section -->
+    <div id="gallerySection" class="gallery-section" style="margin-top: 0; border-top: none; border-radius: 0;">
+      <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 20px 15px 15px;">
+        <i class="fa-solid fa-arrow-left" style="font-size: 18px; cursor: pointer; color: var(--text-primary); margin-bottom: 20px;" onclick="goBack()"></i>
+        <h2 style="font-size: 22px; font-weight: 400; margin: 0; color: var(--text-primary); text-align: left; width: 100%;">Gallery</h2>
+      </div>
+      <div id="galleryGrid" class="gallery-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Element -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close">&times;</button>
+    <img id="lightboxImg" src="" alt="Lightbox Preview" onclick="event.stopPropagation()" />
+  </div>
+
+  <script>
+    function getUsernameFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const explicit = params.get('username');
+      if (explicit) return explicit;
+      return null;
+    }
+
+    function goBack() {
+      const username = getUsernameFromUrl();
+      if (username) {
+        window.location.href = `../index.html?username=${username}`;
+      } else {
+        window.location.href = '../index.html';
+      }
+    }
+
+    function renderGallery() {
+      const grid = document.getElementById('galleryGrid');
+      grid.innerHTML = '';
+      
+      for (let i = 0; i < 9; i++) {
+        const skeleton = document.createElement('div');
+        skeleton.className = 'skeleton-item skeleton';
+        grid.appendChild(skeleton);
+      }
+
+      const instaLink = 'https://www.instagram.com/riz_wa_n/';
+
+      setTimeout(() => {
+        grid.innerHTML = '';
+        
+        const mockFetchedInstagramImages = [
+           "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=600",
+           "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=400",
+           "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600",
+           "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=400",
+           "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=600",
+           "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=400",
+           "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=600",
+           "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400",
+           "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&q=80&w=600"
+        ];
+
+        if (mockFetchedInstagramImages.length === 0) {
+          grid.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted); margin-top:20px;">No images found on Instagram.</p>';
+          return;
+        }
+
+        mockFetchedInstagramImages.forEach((url, i) => {
+          const item = document.createElement('div');
+          item.className = 'gallery-item';
+          
+          const a = document.createElement('a');
+          a.href = "#";
+          a.onclick = (e) => {
+            e.preventDefault();
+            openLightbox(url);
+          };
+
+          const img = document.createElement('img');
+          img.src = url;
+          img.alt = `Instagram Item ${i + 1}`;
+          a.appendChild(img);
+          item.appendChild(a);
+
+          if (i % 3 === 2) {
+            const icon = document.createElement('div');
+            icon.className = 'gallery-item-icon';
+            icon.innerHTML = '<i class="fa-solid fa-play"></i>';
+            item.appendChild(icon);
+          } else if (i % 4 === 3) {
+            const icon = document.createElement('div');
+            icon.className = 'gallery-item-icon';
+            icon.innerHTML = '<i class="fa-solid fa-clone"></i>';
+            item.appendChild(icon);
+          }
+          
+          grid.appendChild(item);
+        });
+      }, 1000);
+    }
+
+    // Lightbox Logic
+    function openLightbox(url) {
+      const lightbox = document.getElementById('lightbox');
+      document.getElementById('lightboxImg').src = url;
+      lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+    }
+
+    // Init
+    renderGallery();
+  </script>
+</body>
+</html>

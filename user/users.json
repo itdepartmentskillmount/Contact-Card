@@ -52,14 +52,6 @@
           "facebook": "https://facebook.com/growlearn"
         }
       }
-    ],
-    "gallery": [
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
-      "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
-      "https://images.unsplash.com/photo-1551434678-e076c223a692",
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
     ]
   },
   {
@@ -104,11 +96,6 @@
           "address": "Kozhikode, Kerala"
         }
       }
-    ],
-    "gallery": [
-      "https://images.unsplash.com/photo-1556745757-8d76bdb6984b",
-      "https://images.unsplash.com/photo-1522202222206-91a3d3c4d0e3",
-      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70"
     ]
   },
   {
@@ -128,10 +115,6 @@
       "facebook": "https://facebook.com/harsh",
       "youtube": "https://youtube.com/@harsh"
     },
-    "brands": [],
-    "gallery": [
-      "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
-    ]
+    "brands": []
   }
 ]

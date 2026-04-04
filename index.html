@@ -22,7 +22,7 @@
         <i class="fa-solid fa-circle-info"></i>
         About Me
       </button>
-      <button class="nav-btn">
+      <button class="nav-btn" onclick="openGalleryPage()">
         <i class="fa-solid fa-image"></i>
         Gallery
       </button>
@@ -33,11 +33,11 @@
 
     <!-- Profile Section -->
     <section class="profile-section">
-      <div class="profile-img-container">
-        <img id="cardAvatar" src="" alt="Profile Picture" />
+      <div id="cardAvatarContainer" class="profile-img-container skeleton">
+        <img id="cardAvatar" src="" alt="Profile Picture" style="display: none;" onload="this.style.display='block'; document.getElementById('cardAvatarContainer').classList.remove('skeleton');" />
       </div>
-      <h1 id="cardName" class="profile-name"></h1>
-      <p id="cardHeadline" class="profile-headline"></p>
+      <h1 id="cardName" class="profile-name skeleton" style="min-width: 200px; height: 26px; margin: 15px auto 0; border-radius: 6px;"></h1>
+      <p id="cardHeadline" class="profile-headline skeleton" style="min-width: 250px; height: 16px; margin: 5px auto 0; border-radius: 4px;"></p>
     </section>
 
     <!-- Main Action Block -->
@@ -73,6 +73,8 @@
         <!-- Will be populated by JS based on selected brand -->
       </div>
     </div>
+
+
 
   </div>
 
@@ -118,8 +120,19 @@
     function renderUser() {
       if (!currentUser) return;
       document.getElementById('cardAvatar').src = currentUser.avatarUrl;
-      document.getElementById('cardName').textContent = currentUser.name;
-      document.getElementById('cardHeadline').textContent = currentUser.headline;
+      
+      const nameEl = document.getElementById('cardName');
+      nameEl.textContent = currentUser.name;
+      nameEl.classList.remove('skeleton');
+      nameEl.style.minWidth = 'auto';
+      nameEl.style.height = 'auto';
+
+      const headlineEl = document.getElementById('cardHeadline');
+      headlineEl.textContent = currentUser.headline;
+      headlineEl.classList.remove('skeleton');
+      headlineEl.style.minWidth = 'auto';
+      headlineEl.style.height = 'auto';
+
       document.title = `${currentUser.name} Contact Card`;
 
       // Header Notch Cover Image
@@ -416,8 +429,18 @@ END:VCARD`;
       } catch (e) { }
     }
 
+    function openGalleryPage() {
+      const username = getUsernameFromUrl();
+      if (username) {
+        window.location.href = `./pages/gallery.html?username=${username}`;
+      } else {
+        window.location.href = './pages/gallery.html';
+      }
+    }
+
     init();
   </script>
+
 </body>
 
 </html>
