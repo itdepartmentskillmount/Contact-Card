@@ -115,6 +115,7 @@
         document.getElementById('cardAvatar').src = currentUser.avatarUrl;
         document.getElementById('cardName').textContent = currentUser.name;
         document.getElementById('cardHeadline').textContent = currentUser.headline;
+        document.title = `${currentUser.name} Contact Card`;
         
         // Header Notch Cover Image
         const notch = document.querySelector('.header-notch');
