@@ -40,10 +40,10 @@
       <!-- Main Action Block -->
       <div class="action-block">
         <div class="action-row">
-          <div class="action-icon active" title="Call"><i class="fa-solid fa-phone"></i></div>
+          <div class="action-icon active" title="Call"><i class="fa-solid fa-phone-volume"></i></div>
           <div class="action-icon" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></div>
-          <div class="action-icon" title="Email"><i class="fa-solid fa-envelope"></i></div>
-          <div class="action-icon" title="Save Contact"><i class="fa-solid fa-user-plus"></i></div>
+          <div class="action-icon" title="Email"><i class="fa-regular fa-envelope"></i></div>
+          <div class="action-icon" title="Save Contact"><i class="fa-solid fa-cloud-arrow-down"></i></div>
         </div>
         <div class="action-divider"></div>
         <div class="action-footer">
@@ -134,7 +134,7 @@
           const a = document.createElement('a');
           a.href = s.linkedin;
           a.className = 'pill';
-          a.innerHTML = `<i class="fa-brands fa-linkedin"></i> LinkedIn`;
+          a.innerHTML = `<i class="fa-brands fa-linkedin-in"></i> LinkedIn`;
           topSocials.appendChild(a);
         }
         if (s.instagram) {
@@ -290,7 +290,7 @@ END:VCARD`;
             <div class="contact-header">
               <div class="contact-item-left">
                 <div class="contact-item-icon">
-                  <i class="fa-solid fa-phone"></i>
+                 <i class="fa-solid fa-square-phone"></i>
                 </div>
                 <div class="contact-item-content">
                   <span class="contact-label">Contact Number</span>
@@ -341,7 +341,7 @@ END:VCARD`;
             <div class="contact-header">
               <div class="contact-item-left">
                 <div class="contact-item-icon">
-                  <i class="fa-solid fa-envelope"></i>
+                  <i class="fa-regular fa-envelope"></i>
                 </div>
                 <div class="contact-item-content">
                   <span class="contact-label">E-mail</span>
@@ -366,7 +366,7 @@ END:VCARD`;
             <div class="contact-header">
               <div class="contact-item-left">
                 <div class="contact-item-icon">
-                  <i class="fa-solid fa-map-pin"></i>
+                  <i class="fa-solid fa-location-dot"></i>
                 </div>
                 <div class="contact-item-content">
                   <span class="contact-label">Address</span>
@@ -390,7 +390,7 @@ END:VCARD`;
           <div class="social-pills" style="margin-top: 20px; padding: 0; gap: 8px;">
             ${(brand?.socials || currentUser.socials)?.instagram ? `<a href="${(brand?.socials || currentUser.socials).instagram}" target="_blank" class="pill"><i class="fa-brands fa-instagram"></i> Instagram</a>` : ''}
             ${(brand?.socials || currentUser.socials)?.facebook ? `<a href="${(brand?.socials || currentUser.socials).facebook}" target="_blank" class="pill"><i class="fa-brands fa-facebook"></i> Facebook</a>` : ''}
-            ${(brand?.socials || currentUser.socials)?.linkedin ? `<a href="${(brand?.socials || currentUser.socials).linkedin}" target="_blank" class="pill"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>` : ''}
+            ${(brand?.socials || currentUser.socials)?.linkedin ? `<a href="${(brand?.socials || currentUser.socials).linkedin}" target="_blank" class="pill"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>` : ''}
             ${(brand?.socials || currentUser.socials)?.youtube ? `<a href="${(brand?.socials || currentUser.socials).youtube}" target="_blank" class="pill"><i class="fa-brands fa-youtube"></i> YouTube</a>` : ''}
           </div>
         `;
