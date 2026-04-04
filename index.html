@@ -1,64 +1,67 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Card</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="index.css" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  </head>
-  <body>
-    <div class="container">
-      <!-- Top Navigation -->
-      <nav class="top-nav">
-        <button class="nav-btn">
-          <i class="fa-solid fa-circle-info"></i>
-          About Me
-        </button>
-        <button class="nav-btn">
-          <i class="fa-solid fa-image"></i>
-          Gallery
-        </button>
-      </nav>
 
-      <!-- White Header Notch -->
-      <div class="header-notch"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
 
-      <!-- Profile Section -->
-      <section class="profile-section">
-        <div class="profile-img-container">
-          <img id="cardAvatar" src="" alt="Profile Picture" />
-        </div>
-        <h1 id="cardName" class="profile-name"></h1>
-        <p id="cardHeadline" class="profile-headline"></p>
-      </section>
+<body>
+  <div class="container">
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+      <button class="nav-btn">
+        <i class="fa-solid fa-circle-info"></i>
+        About Me
+      </button>
+      <button class="nav-btn">
+        <i class="fa-solid fa-image"></i>
+        Gallery
+      </button>
+    </nav>
 
-      <!-- Main Action Block -->
-      <div class="action-block">
-        <div class="action-row">
-          <div class="action-icon active" title="Call"><i class="fa-solid fa-phone-volume"></i></div>
-          <div class="action-icon" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></div>
-          <div class="action-icon" title="Email"><i class="fa-regular fa-envelope"></i></div>
-          <div class="action-icon" title="Save Contact"><i class="fa-solid fa-cloud-arrow-down"></i></div>
-        </div>
-        <div class="action-divider"></div>
-        <div class="action-footer">
-          <div id="cardPhoneDisplay" class="phone-display"></div>
-          <a id="cardCallNow" href="#" class="call-now-pill">
-            Call Now <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
+    <!-- White Header Notch -->
+    <div class="header-notch"></div>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+      <div class="profile-img-container">
+        <img id="cardAvatar" src="" alt="Profile Picture" />
       </div>
+      <h1 id="cardName" class="profile-name"></h1>
+      <p id="cardHeadline" class="profile-headline"></p>
+    </section>
 
-      <!-- Top Social Pills -->
-      <div id="topSocialPills" class="social-pills">
-        <!-- Will be populated by JS -->
+    <!-- Main Action Block -->
+    <div class="action-block">
+      <div class="action-row">
+        <div class="action-icon active" title="Call"><i class="fa-solid fa-phone-volume"></i></div>
+        <div class="action-icon" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="action-icon" title="Email"><i class="fa-regular fa-envelope"></i></div>
+        <div class="action-icon" title="Save Contact"><i class="fa-solid fa-cloud-arrow-down"></i></div>
       </div>
+      <div class="action-divider"></div>
+      <div class="action-footer">
+        <div id="cardPhoneDisplay" class="phone-display"></div>
+        <a id="cardCallNow" href="#" class="call-now-pill">
+          Call Now <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
 
+    <!-- Top Social Pills -->
+    <div id="topSocialPills" class="social-pills">
+      <!-- Will be populated by JS -->
+    </div>
+
+    <div class="brand-contact-container">
       <!-- Brand Tabs -->
       <div id="brandTabs" class="brand-tabs">
         <!-- Will be populated by JS -->
@@ -68,182 +71,183 @@
       <div id="contactList" class="contact-list">
         <!-- Will be populated by JS based on selected brand -->
       </div>
-
     </div>
 
-    <script>
-      let currentUser = null;
-      let currentBrand = null;
-      let currentAction = 'call'; // 'call', 'whatsapp', 'email', 'save'
+  </div>
 
-      function getUsernameFromUrl() {
-        const params = new URLSearchParams(window.location.search);
-        const explicit = params.get('username');
-        if (explicit) return explicit;
-        const raw = window.location.search.replace(/^\?/, '').trim();
-        if (!raw) return null;
-        try { return decodeURIComponent(raw); } catch { return raw; }
+  <script>
+    let currentUser = null;
+    let currentBrand = null;
+    let currentAction = 'call'; // 'call', 'whatsapp', 'email', 'save'
+
+    function getUsernameFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const explicit = params.get('username');
+      if (explicit) return explicit;
+      const raw = window.location.search.replace(/^\?/, '').trim();
+      if (!raw) return null;
+      try { return decodeURIComponent(raw); } catch { return raw; }
+    }
+
+    function normalizeE164(phone) {
+      if (!phone) return '';
+      const s = String(phone).trim();
+      const hasPlus = s.startsWith('+');
+      const digits = s.replace(/[^0-9]/g, '');
+      return (hasPlus ? '+' : '') + digits;
+    }
+
+    async function init() {
+      const username = getUsernameFromUrl();
+      let users = [];
+      try {
+        const res = await fetch('./user/users.json', { cache: 'no-store' });
+        users = await res.json();
+      } catch (e) { console.error('Failed to load user/users.json', e); return; }
+
+      currentUser = (username ? users.find(u => u.username === username) : null) || users[0];
+      if (currentUser && currentUser.brands && currentUser.brands.length > 0) {
+        currentBrand = currentUser.brands[0];
+      } else {
+        currentBrand = null;
+      }
+      renderUser();
+    }
+
+    function renderUser() {
+      if (!currentUser) return;
+      document.getElementById('cardAvatar').src = currentUser.avatarUrl;
+      document.getElementById('cardName').textContent = currentUser.name;
+      document.getElementById('cardHeadline').textContent = currentUser.headline;
+      document.title = `${currentUser.name} Contact Card`;
+
+      // Header Notch Cover Image
+      const notch = document.querySelector('.header-notch');
+      if (currentUser.coverUrl) {
+        notch.style.backgroundImage = `url(${currentUser.coverUrl})`;
+      } else {
+        notch.style.background = '#FFFFFF';
       }
 
-      function normalizeE164(phone) {
-        if (!phone) return '';
-        const s = String(phone).trim();
-        const hasPlus = s.startsWith('+');
-        const digits = s.replace(/[^0-9]/g, '');
-        return (hasPlus ? '+' : '') + digits;
+      // Socials (Top Pills)
+      const topSocials = document.getElementById('topSocialPills');
+      topSocials.innerHTML = '';
+      const s = currentUser.socials || {};
+
+      if (s.linkedin) {
+        const a = document.createElement('a');
+        a.href = s.linkedin;
+        a.className = 'pill';
+        a.innerHTML = `<i class="fa-brands fa-linkedin-in"></i> LinkedIn`;
+        topSocials.appendChild(a);
+      }
+      if (s.instagram) {
+        const a = document.createElement('a');
+        a.href = s.instagram;
+        a.className = 'pill';
+        a.innerHTML = `<i class="fa-brands fa-instagram"></i> Instagram`;
+        topSocials.appendChild(a);
+      }
+      if (s.facebook) {
+        const a = document.createElement('a');
+        a.href = s.facebook;
+        a.className = 'pill';
+        a.innerHTML = `<i class="fa-brands fa-facebook"></i> Facebook`;
+        topSocials.appendChild(a);
       }
 
-      async function init() {
-        const username = getUsernameFromUrl();
-        let users = [];
-        try {
-          const res = await fetch('./user/users.json', { cache: 'no-store' });
-          users = await res.json();
-        } catch (e) { console.error('Failed to load user/users.json', e); return; }
+      const shareBtn = document.createElement('button');
+      shareBtn.className = 'pill';
+      shareBtn.onclick = shareCard;
+      shareBtn.innerHTML = `<i class="fa-solid fa-share-nodes"></i> Share`;
+      topSocials.appendChild(shareBtn);
 
-        currentUser = (username ? users.find(u => u.username === username) : null) || users[0];
-        if (currentUser && currentUser.brands && currentUser.brands.length > 0) {
-          currentBrand = currentUser.brands[0];
+      renderBrands();
+    }
+
+    function renderBrands() {
+      const tabs = document.getElementById('brandTabs');
+      tabs.innerHTML = '';
+      const brands = currentUser.brands || [];
+
+      brands.forEach((brand, idx) => {
+        const div = document.createElement('div');
+        div.className = `brand-tab ${currentBrand && currentBrand.id === brand.id ? 'active' : (!currentBrand && idx === 0 ? 'active' : '')}`;
+
+        if (brand.logo) {
+          div.innerHTML = `<img src="${brand.logo}" alt="${brand.name}" class="brand-logo-img" />`;
         } else {
-          currentBrand = null;
+          div.innerHTML = `<div class="pill" style="color:white; background: transparent; border: 1px solid var(--border-color);">${brand.name.toUpperCase()}</div>`;
         }
-        renderUser();
-      }
 
-      function renderUser() {
-        if (!currentUser) return;
-        document.getElementById('cardAvatar').src = currentUser.avatarUrl;
-        document.getElementById('cardName').textContent = currentUser.name;
-        document.getElementById('cardHeadline').textContent = currentUser.headline;
-        document.title = `${currentUser.name} Contact Card`;
-        
-        // Header Notch Cover Image
-        const notch = document.querySelector('.header-notch');
-        if (currentUser.coverUrl) {
-          notch.style.backgroundImage = `url(${currentUser.coverUrl})`;
-        } else {
-          notch.style.background = '#FFFFFF';
-        }
-        
-        // Socials (Top Pills)
-        const topSocials = document.getElementById('topSocialPills');
-        topSocials.innerHTML = '';
-        const s = currentUser.socials || {};
-        
-        if (s.linkedin) {
-          const a = document.createElement('a');
-          a.href = s.linkedin;
-          a.className = 'pill';
-          a.innerHTML = `<i class="fa-brands fa-linkedin-in"></i> LinkedIn`;
-          topSocials.appendChild(a);
-        }
-        if (s.instagram) {
-          const a = document.createElement('a');
-          a.href = s.instagram;
-          a.className = 'pill';
-          a.innerHTML = `<i class="fa-brands fa-instagram"></i> Instagram`;
-          topSocials.appendChild(a);
-        }
-        if (s.facebook) {
-          const a = document.createElement('a');
-          a.href = s.facebook;
-          a.className = 'pill';
-          a.innerHTML = `<i class="fa-brands fa-facebook"></i> Facebook`;
-          topSocials.appendChild(a);
-        }
-        
-        const shareBtn = document.createElement('button');
-        shareBtn.className = 'pill';
-        shareBtn.onclick = shareCard;
-        shareBtn.innerHTML = `<i class="fa-solid fa-share-nodes"></i> Share`;
-        topSocials.appendChild(shareBtn);
-
-        renderBrands();
-      }
-
-      function renderBrands() {
-        const tabs = document.getElementById('brandTabs');
-        tabs.innerHTML = '';
-        const brands = currentUser.brands || [];
-
-        brands.forEach((brand, idx) => {
-          const div = document.createElement('div');
-          div.className = `brand-tab ${currentBrand && currentBrand.id === brand.id ? 'active' : (!currentBrand && idx === 0 ? 'active' : '')}`;
-          
-          if (brand.logo) {
-            div.innerHTML = `<img src="${brand.logo}" alt="${brand.name}" class="brand-logo-img" />`;
-          } else {
-            div.innerHTML = `<div class="pill" style="color:white; background: transparent; border: 1px solid var(--border-color);">${brand.name.toUpperCase()}</div>`;
-          }
-
-          div.onclick = () => {
-            currentBrand = brand;
-            document.querySelectorAll('.brand-tab').forEach(t => t.classList.remove('active'));
-            div.classList.add('active');
-            updateActionBlock();
-            renderContactList(brand);
-          };
-          tabs.appendChild(div);
-        });
-
-        if (currentBrand) {
+        div.onclick = () => {
+          currentBrand = brand;
+          document.querySelectorAll('.brand-tab').forEach(t => t.classList.remove('active'));
+          div.classList.add('active');
           updateActionBlock();
-          renderContactList(currentBrand);
-        } else if (brands.length > 0) {
-          currentBrand = brands[0];
-          updateActionBlock();
-          renderContactList(currentBrand);
-        } else {
-          // If no brands, maybe clear contact list or show personal contact if available
-          renderContactList(null);
-        }
+          renderContactList(brand);
+        };
+        tabs.appendChild(div);
+      });
+
+      if (currentBrand) {
+        updateActionBlock();
+        renderContactList(currentBrand);
+      } else if (brands.length > 0) {
+        currentBrand = brands[0];
+        updateActionBlock();
+        renderContactList(currentBrand);
+      } else {
+        // If no brands, maybe clear contact list or show personal contact if available
+        renderContactList(null);
       }
+    }
 
-      function updateActionBlock() {
-        const c = currentBrand ? currentBrand.contact : currentUser; 
-        if (!c) return;
+    function updateActionBlock() {
+      const c = currentBrand ? currentBrand.contact : currentUser;
+      if (!c) return;
 
-        const phoneE164 = normalizeE164(c.phoneE164 || c.phone);
-        const display = document.getElementById('cardPhoneDisplay');
-        const btn = document.getElementById('cardCallNow');
-        
-        // Reset active icons
-        document.querySelectorAll('.action-icon').forEach(icon => {
-          icon.classList.remove('active');
-          if (icon.getAttribute('title').toLowerCase() === currentAction) {
-            icon.classList.add('active');
-          }
-        });
+      const phoneE164 = normalizeE164(c.phoneE164 || c.phone);
+      const display = document.getElementById('cardPhoneDisplay');
+      const btn = document.getElementById('cardCallNow');
 
-        if (currentAction === 'call') {
-          display.textContent = c.phone || 'N/A';
-          btn.innerHTML = `Call Now <i class="fa-solid fa-arrow-right"></i>`;
-          btn.href = c.phone ? `tel:${phoneE164}` : '#';
-          btn.onclick = null;
-        } else if (currentAction === 'whatsapp') {
-          display.textContent = c.phone || 'N/A';
-          btn.innerHTML = `WhatsApp <i class="fa-solid fa-arrow-right"></i>`;
-          btn.href = c.phone ? `https://wa.me/${phoneE164.replace('+', '')}` : '#';
-          btn.onclick = null;
-        } else if (currentAction === 'email') {
-          display.textContent = c.email || 'N/A';
-          btn.innerHTML = `Send Email <i class="fa-solid fa-arrow-right"></i>`;
-          btn.href = c.email ? `mailto:${c.email}` : '#';
-          btn.onclick = null;
-        } else if (currentAction === 'save contact') {
-           display.textContent = 'Save to Contacts';
-           btn.innerHTML = `Download VCF <i class="fa-solid fa-arrow-right"></i>`;
-           btn.href = '#';
-           btn.onclick = (e) => {
-             e.preventDefault();
-             downloadVCF(currentUser, currentBrand);
-           };
+      // Reset active icons
+      document.querySelectorAll('.action-icon').forEach(icon => {
+        icon.classList.remove('active');
+        if (icon.getAttribute('title').toLowerCase() === currentAction) {
+          icon.classList.add('active');
         }
-      }
+      });
 
-      function downloadVCF(user, brand) {
-        const contact = brand ? brand.contact : user;
-        const vcard = `BEGIN:VCARD
+      if (currentAction === 'call') {
+        display.textContent = c.phone || 'N/A';
+        btn.innerHTML = `Call Now <i class="fa-solid fa-arrow-right"></i>`;
+        btn.href = c.phone ? `tel:${phoneE164}` : '#';
+        btn.onclick = null;
+      } else if (currentAction === 'whatsapp') {
+        display.textContent = c.phone || 'N/A';
+        btn.innerHTML = `WhatsApp <i class="fa-solid fa-arrow-right"></i>`;
+        btn.href = c.phone ? `https://wa.me/${phoneE164.replace('+', '')}` : '#';
+        btn.onclick = null;
+      } else if (currentAction === 'email') {
+        display.textContent = c.email || 'N/A';
+        btn.innerHTML = `Send Email <i class="fa-solid fa-arrow-right"></i>`;
+        btn.href = c.email ? `mailto:${c.email}` : '#';
+        btn.onclick = null;
+      } else if (currentAction === 'save contact') {
+        display.textContent = 'Save to Contacts';
+        btn.innerHTML = `Download VCF <i class="fa-solid fa-arrow-right"></i>`;
+        btn.href = '#';
+        btn.onclick = (e) => {
+          e.preventDefault();
+          downloadVCF(currentUser, currentBrand);
+        };
+      }
+    }
+
+    function downloadVCF(user, brand) {
+      const contact = brand ? brand.contact : user;
+      const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:${user.name}${brand ? ' (' + brand.name + ')' : ''}
 TEL;TYPE=CELL:${contact.phone}
@@ -251,40 +255,40 @@ EMAIL:${contact.email}
 URL:${contact.website}
 ADR:;;${contact.address};;;;
 END:VCARD`;
-        const blob = new Blob([vcard], { type: 'text/vcard' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `${user.name.replace(/\s+/g, '_')}${brand ? '_' + brand.id : ''}.vcf`;
-        a.click();
+      const blob = new Blob([vcard], { type: 'text/vcard' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${user.name.replace(/\s+/g, '_')}${brand ? '_' + brand.id : ''}.vcf`;
+      a.click();
+    }
+
+    // Attach action tab listeners
+    document.querySelectorAll('.action-icon').forEach(icon => {
+      icon.onclick = () => {
+        currentAction = icon.getAttribute('title').toLowerCase();
+        updateActionBlock();
+      };
+    });
+
+    function toggleAccordion(el) {
+      const isActive = el.classList.contains('active');
+      // Close all others
+      document.querySelectorAll('.contact-item').forEach(item => item.classList.remove('active'));
+      // Toggle current
+      if (!isActive) el.classList.add('active');
+    }
+
+    function renderContactList(brand) {
+      const list = document.getElementById('contactList');
+      const c = brand ? brand.contact : currentUser;
+      if (!c) {
+        list.innerHTML = '';
+        return;
       }
+      const phoneE164 = normalizeE164(c.phoneE164 || c.phone);
 
-      // Attach action tab listeners
-      document.querySelectorAll('.action-icon').forEach(icon => {
-        icon.onclick = () => {
-          currentAction = icon.getAttribute('title').toLowerCase();
-          updateActionBlock();
-        };
-      });
-
-      function toggleAccordion(el) {
-        const isActive = el.classList.contains('active');
-        // Close all others
-        document.querySelectorAll('.contact-item').forEach(item => item.classList.remove('active'));
-        // Toggle current
-        if (!isActive) el.classList.add('active');
-      }
-
-      function renderContactList(brand) {
-        const list = document.getElementById('contactList');
-        const c = brand ? brand.contact : currentUser;
-        if (!c) {
-          list.innerHTML = '';
-          return;
-        }
-        const phoneE164 = normalizeE164(c.phoneE164 || c.phone);
-        
-        list.innerHTML = `
+      list.innerHTML = `
           <!-- Contact Number -->
           <div class="contact-item active" onclick="toggleAccordion(this)">
             <div class="contact-header">
@@ -394,25 +398,25 @@ END:VCARD`;
             ${(brand?.socials || currentUser.socials)?.youtube ? `<a href="${(brand?.socials || currentUser.socials).youtube}" target="_blank" class="pill"><i class="fa-brands fa-youtube"></i> YouTube</a>` : ''}
           </div>
         `;
-      }
+    }
 
-      async function shareCard() {
-        const shareData = {
-          title: currentUser?.name || 'Contact',
-          url: window.location.href,
-        };
-        if (navigator.share) {
-          try { await navigator.share(shareData); } catch (_) {}
-          return;
-        }
-        try {
-          await navigator.clipboard.writeText(window.location.href);
-          alert('Link copied!');
-        } catch (e) {}
+    async function shareCard() {
+      const shareData = {
+        title: currentUser?.name || 'Contact',
+        url: window.location.href,
+      };
+      if (navigator.share) {
+        try { await navigator.share(shareData); } catch (_) { }
+        return;
       }
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        alert('Link copied!');
+      } catch (e) { }
+    }
 
-      init();
-    </script>
-  </body>
+    init();
+  </script>
+</body>
+
 </html>
-
