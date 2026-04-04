@@ -8,19 +8,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="index.css" />
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@0.395.0"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   </head>
   <body>
     <div class="container">
       <!-- Top Navigation -->
       <nav class="top-nav">
         <button class="nav-btn">
-          <i data-lucide="info"></i>
+          <i class="fa-solid fa-circle-info"></i>
           About Me
         </button>
         <button class="nav-btn">
-          <i data-lucide="image"></i>
+          <i class="fa-solid fa-image"></i>
           Gallery
         </button>
       </nav>
@@ -40,16 +40,16 @@
       <!-- Main Action Block -->
       <div class="action-block">
         <div class="action-row">
-          <div class="action-icon active" title="Call"><i data-lucide="phone"></i></div>
-          <div class="action-icon" title="WhatsApp"><i data-lucide="message-circle"></i></div>
-          <div class="action-icon" title="Email"><i data-lucide="mail"></i></div>
-          <div class="action-icon" title="Save Contact"><i data-lucide="user-plus"></i></div>
+          <div class="action-icon active" title="Call"><i class="fa-solid fa-phone"></i></div>
+          <div class="action-icon" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></div>
+          <div class="action-icon" title="Email"><i class="fa-solid fa-envelope"></i></div>
+          <div class="action-icon" title="Save Contact"><i class="fa-solid fa-user-plus"></i></div>
         </div>
         <div class="action-divider"></div>
         <div class="action-footer">
           <div id="cardPhoneDisplay" class="phone-display"></div>
           <a id="cardCallNow" href="#" class="call-now-pill">
-            Call Now <i data-lucide="arrow-right"></i>
+            Call Now <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
       </div>
@@ -134,32 +134,31 @@
           const a = document.createElement('a');
           a.href = s.linkedin;
           a.className = 'pill';
-          a.innerHTML = `<i data-lucide="Linkedin"></i> LinkedIn`;
+          a.innerHTML = `<i class="fa-brands fa-linkedin"></i> LinkedIn`;
           topSocials.appendChild(a);
         }
         if (s.instagram) {
           const a = document.createElement('a');
           a.href = s.instagram;
           a.className = 'pill';
-          a.innerHTML = `<i data-lucide="Instagram"></i> Instagram`;
+          a.innerHTML = `<i class="fa-brands fa-instagram"></i> Instagram`;
           topSocials.appendChild(a);
         }
         if (s.facebook) {
           const a = document.createElement('a');
           a.href = s.facebook;
           a.className = 'pill';
-          a.innerHTML = `<i data-lucide="Facebook"></i> Facebook`;
+          a.innerHTML = `<i class="fa-brands fa-facebook"></i> Facebook`;
           topSocials.appendChild(a);
         }
         
         const shareBtn = document.createElement('button');
         shareBtn.className = 'pill';
         shareBtn.onclick = shareCard;
-        shareBtn.innerHTML = `<i data-lucide="share-2"></i> Share`;
+        shareBtn.innerHTML = `<i class="fa-solid fa-share-nodes"></i> Share`;
         topSocials.appendChild(shareBtn);
 
         renderBrands();
-        lucide.createIcons();
       }
 
       function renderBrands() {
@@ -218,29 +217,28 @@
 
         if (currentAction === 'call') {
           display.textContent = c.phone || 'N/A';
-          btn.innerHTML = `Call Now <i data-lucide="arrow-right"></i>`;
+          btn.innerHTML = `Call Now <i class="fa-solid fa-arrow-right"></i>`;
           btn.href = c.phone ? `tel:${phoneE164}` : '#';
           btn.onclick = null;
         } else if (currentAction === 'whatsapp') {
           display.textContent = c.phone || 'N/A';
-          btn.innerHTML = `WhatsApp <i data-lucide="arrow-right"></i>`;
+          btn.innerHTML = `WhatsApp <i class="fa-solid fa-arrow-right"></i>`;
           btn.href = c.phone ? `https://wa.me/${phoneE164.replace('+', '')}` : '#';
           btn.onclick = null;
         } else if (currentAction === 'email') {
           display.textContent = c.email || 'N/A';
-          btn.innerHTML = `Send Email <i data-lucide="arrow-right"></i>`;
+          btn.innerHTML = `Send Email <i class="fa-solid fa-arrow-right"></i>`;
           btn.href = c.email ? `mailto:${c.email}` : '#';
           btn.onclick = null;
         } else if (currentAction === 'save contact') {
            display.textContent = 'Save to Contacts';
-           btn.innerHTML = `Download VCF <i data-lucide="arrow-right"></i>`;
+           btn.innerHTML = `Download VCF <i class="fa-solid fa-arrow-right"></i>`;
            btn.href = '#';
            btn.onclick = (e) => {
              e.preventDefault();
              downloadVCF(currentUser, currentBrand);
            };
         }
-        lucide.createIcons();
       }
 
       function downloadVCF(user, brand) {
@@ -292,22 +290,22 @@ END:VCARD`;
             <div class="contact-header">
               <div class="contact-item-left">
                 <div class="contact-item-icon">
-                  <i data-lucide="phone"></i>
+                  <i class="fa-solid fa-phone"></i>
                 </div>
                 <div class="contact-item-content">
                   <span class="contact-label">Contact Number</span>
                 </div>
               </div>
               <div class="chevron">
-                <i data-lucide="chevron-right"></i>
+                <i class="fa-solid fa-chevron-right"></i>
               </div>
             </div>
             <div class="contact-body">
               <div class="accordion-content-row">
                 <span class="contact-value">${c.phone || 'N/A'}</span>
                 <div class="accordion-actions">
-                   <a href="tel:${phoneE164}" class="call-now-pill">Call <i data-lucide="arrow-right"></i></a>
-                   <a href="https://wa.me/${phoneE164.replace('+', '')}" class="call-now-pill">WhatsApp <i data-lucide="arrow-right"></i></a>
+                   <a href="tel:${phoneE164}" class="call-now-pill">Call <i class="fa-solid fa-arrow-right"></i></a>
+                   <a href="https://wa.me/${phoneE164.replace('+', '')}" class="call-now-pill">WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
               </div>
             </div>
@@ -318,21 +316,21 @@ END:VCARD`;
             <div class="contact-header">
               <div class="contact-item-left">
                 <div class="contact-item-icon">
-                  <i data-lucide="globe"></i>
+                  <i class="fa-solid fa-globe"></i>
                 </div>
                 <div class="contact-item-content">
                   <span class="contact-label">Website</span>
                 </div>
               </div>
               <div class="chevron">
-                <i data-lucide="chevron-right"></i>
+                <i class="fa-solid fa-chevron-right"></i>
               </div>
             </div>
             <div class="contact-body">
               <div class="accordion-content-row">
                 <span class="contact-value">${c.website ? c.website.replace(/^https?:\/\//, '') : 'N/A'}</span>
                 <div class="accordion-actions">
-                   <a href="${c.website}" target="_blank" class="call-now-pill">Visit <i data-lucide="arrow-right"></i></a>
+                   <a href="${c.website}" target="_blank" class="call-now-pill">Visit <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
               </div>
             </div>
@@ -343,21 +341,21 @@ END:VCARD`;
             <div class="contact-header">
               <div class="contact-item-left">
                 <div class="contact-item-icon">
-                  <i data-lucide="mail"></i>
+                  <i class="fa-solid fa-envelope"></i>
                 </div>
                 <div class="contact-item-content">
                   <span class="contact-label">E-mail</span>
                 </div>
               </div>
               <div class="chevron">
-                <i data-lucide="chevron-right"></i>
+                <i class="fa-solid fa-chevron-right"></i>
               </div>
             </div>
             <div class="contact-body">
               <div class="accordion-content-row">
                 <span class="contact-value">${c.email || 'N/A'}</span>
                 <div class="accordion-actions">
-                   <a href="mailto:${c.email}" class="call-now-pill">Email <i data-lucide="arrow-right"></i></a>
+                   <a href="mailto:${c.email}" class="call-now-pill">Email <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
               </div>
             </div>
@@ -368,21 +366,21 @@ END:VCARD`;
             <div class="contact-header">
               <div class="contact-item-left">
                 <div class="contact-item-icon">
-                  <i data-lucide="map-pin"></i>
+                  <i class="fa-solid fa-map-pin"></i>
                 </div>
                 <div class="contact-item-content">
                   <span class="contact-label">Address</span>
                 </div>
               </div>
               <div class="chevron">
-                <i data-lucide="chevron-right"></i>
+                <i class="fa-solid fa-chevron-right"></i>
               </div>
             </div>
             <div class="contact-body">
               <div class="accordion-content-row">
                 <span class="contact-value">${c.address || 'N/A'}</span>
                 <div class="accordion-actions">
-                   <a href="https://maps.google.com/?q=${encodeURIComponent(c.address)}" target="_blank" class="call-now-pill">Maps <i data-lucide="arrow-right"></i></a>
+                   <a href="https://maps.google.com/?q=${encodeURIComponent(c.address)}" target="_blank" class="call-now-pill">Maps <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
               </div>
             </div>
@@ -390,13 +388,12 @@ END:VCARD`;
 
           <!-- Bottom Social Pills -->
           <div class="social-pills" style="margin-top: 20px; padding: 0; gap: 8px;">
-            ${(brand?.socials || currentUser.socials)?.instagram ? `<a href="${(brand?.socials || currentUser.socials).instagram}" target="_blank" class="pill"><i data-lucide="Instagram"></i> Instagram</a>` : ''}
-            ${(brand?.socials || currentUser.socials)?.facebook ? `<a href="${(brand?.socials || currentUser.socials).facebook}" target="_blank" class="pill"><i data-lucide="Facebook"></i> Facebook</a>` : ''}
-            ${(brand?.socials || currentUser.socials)?.linkedin ? `<a href="${(brand?.socials || currentUser.socials).linkedin}" target="_blank" class="pill"><i data-lucide="Linkedin"></i> LinkedIn</a>` : ''}
-            ${(brand?.socials || currentUser.socials)?.youtube ? `<a href="${(brand?.socials || currentUser.socials).youtube}" target="_blank" class="pill"><i data-lucide="Youtube"></i> YouTube</a>` : ''}
+            ${(brand?.socials || currentUser.socials)?.instagram ? `<a href="${(brand?.socials || currentUser.socials).instagram}" target="_blank" class="pill"><i class="fa-brands fa-instagram"></i> Instagram</a>` : ''}
+            ${(brand?.socials || currentUser.socials)?.facebook ? `<a href="${(brand?.socials || currentUser.socials).facebook}" target="_blank" class="pill"><i class="fa-brands fa-facebook"></i> Facebook</a>` : ''}
+            ${(brand?.socials || currentUser.socials)?.linkedin ? `<a href="${(brand?.socials || currentUser.socials).linkedin}" target="_blank" class="pill"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>` : ''}
+            ${(brand?.socials || currentUser.socials)?.youtube ? `<a href="${(brand?.socials || currentUser.socials).youtube}" target="_blank" class="pill"><i class="fa-brands fa-youtube"></i> YouTube</a>` : ''}
           </div>
         `;
-        lucide.createIcons();
       }
 
       async function shareCard() {
