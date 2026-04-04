@@ -1,0 +1,137 @@
+[
+  {
+    "username": "muhammed-rizwan",
+    "name": "Muhammed Rizwan KK",
+    "headline": "Investor | Director - Skillmount | Grow Learn",
+    "phone": "+91 9645 171 510",
+    "phoneE164": "+919645171510",
+    "email": "rizwan@skillmount.in",
+    "website": "https://skillmount.in",
+    "address": "Malappuram, Kerala, India",
+    "avatarUrl": "https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "coverUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/rizwan",
+      "instagram": "https://instagram.com/rizwan",
+      "facebook": "https://facebook.com/rizwan",
+      "youtube": "https://youtube.com/@rizwan"
+    },
+    "brands": [
+      {
+        "id": "skillmount",
+        "name": "Skillmount",
+        "logo": "https://skillmount.com/logs.png",
+        "contact": {
+          "phone": "+91 9645 171 510",
+          "phoneE164": "+919645171510",
+          "email": "info@skillmount.in",
+          "website": "https://skillmount.in",
+          "address": "Malappuram, Kerala"
+        },
+        "socials": {
+          "linkedin": "https://linkedin.com/company/skillmount",
+          "instagram": "https://instagram.com/skillmount",
+          "facebook": "https://facebook.com/skillmount",
+          "youtube": "https://youtube.com/@skillmount"
+        }
+      },
+      {
+        "id": "grow-learn",
+        "name": "Grow Learn",
+        "logo": "https://static.wixstatic.com/media/c39649_84cbf14ad79e4bc78451c373528b3343~mv2.png/v1/fill/w_254,h_102,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GROW%20LEARN%20LOGO%20FINAL%20PNG2-01.png",
+        "contact": {
+          "phone": "+91 91234 56789",
+          "phoneE164": "+919123456789",
+          "email": "hello@growlearn.in",
+          "website": "https://growlearn.in",
+          "address": "Kozhikode, Kerala"
+        },
+        "socials": {
+          "linkedin": "https://linkedin.com/company/growlearn",
+          "instagram": "https://instagram.com/growlearn",
+          "facebook": "https://facebook.com/growlearn"
+        }
+      }
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+      "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+      "https://images.unsplash.com/photo-1551434678-e076c223a692",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+    ]
+  },
+  {
+    "username": "ananya-singh",
+    "name": "Anaya Singh",
+    "headline": "Founder | Product & Growth",
+    "phone": "+91 98765 43210",
+    "phoneE164": "+919876543210",
+    "email": "anaya@startup.in",
+    "website": "https://anaya.io",
+    "address": "Bangalore, India",
+    "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    "coverUrl": "https://images.unsplash.com/photo-1551434678-e076c223a692",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/anaya",
+      "instagram": "https://instagram.com/anaya",
+      "facebook": "https://facebook.com/anaya",
+      "youtube": "https://youtube.com/@anaya"
+    },
+    "brands": [
+      {
+        "id": "skillmount",
+        "name": "Skillmount",
+        "logo": "https://skillmount.com/logs.png",
+        "contact": {
+          "phone": "+91 9645 171 510",
+          "phoneE164": "+919645171510",
+          "email": "info@skillmount.in",
+          "website": "https://skillmount.in",
+          "address": "Malappuram, Kerala"
+        }
+      },
+      {
+        "id": "grow-learn",
+        "name": "Grow Learn",
+        "logo": "https://static.wixstatic.com/media/c39649_84cbf14ad79e4bc78451c373528b3343~mv2.png/v1/fill/w_254,h_102,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GROW%20LEARN%20LOGO%20FINAL%20PNG2-01.png",
+        "contact": {
+          "phone": "+91 91234 56789",
+          "phoneE164": "+919123456789",
+          "email": "hello@growlearn.in",
+          "website": "https://growlearn.in",
+          "address": "Kozhikode, Kerala"
+        }
+      }
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1556745757-8d76bdb6984b",
+      "https://images.unsplash.com/photo-1522202222206-91a3d3c4d0e3",
+      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70"
+    ]
+  },
+  {
+    "username": "harsh-verma",
+    "name": "Harsh Verma",
+    "headline": "Consultant | Operations",
+    "phone": "+91 91234 56789",
+    "phoneE164": "+919123456789",
+    "email": "harsh@consulting.in",
+    "website": "https://harshconsults.com",
+    "address": "Delhi, India",
+    "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    "coverUrl": "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
+    "socials": {
+      "linkedin": "https://linkedin.com/in/harsh",
+      "instagram": "https://instagram.com/harsh",
+      "facebook": "https://facebook.com/harsh",
+      "youtube": "https://youtube.com/@harsh"
+    },
+    "brands": [],
+    "gallery": [
+      "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+    ]
+  }
+]
