@@ -11,6 +11,8 @@
     "address": "Malappuram, Kerala, India",
     "avatarUrl": "https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "coverUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+    "aboutImage": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1000",
+    "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\n\nIt was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     "socials": {
       "linkedin": "https://linkedin.com/in/rizwan",
       "instagram": "https://instagram.com/rizwan",
@@ -21,7 +23,7 @@
       {
         "id": "skillmount",
         "name": "Skillmount",
-        "logo": "https://skillmount.com/logs.png",
+        "logo": "https://lh3.googleusercontent.com/d/1DfSzst35rhktCrEdiQlxB1DKEdQMc3ZM=w1000",
         "contact": {
           "phone": "+91 9645 171 510",
           "phoneE164": "+919645171510",
@@ -68,79 +70,50 @@
   },
   {
     "id": "2",
-    "username": "ananya-singh",
-    "name": "Anaya Singh",
-    "headline": "Founder | Product & Growth",
-    "phone": "+91 98765 43210",
-    "phoneE164": "+919876543210",
-    "email": "anaya@startup.in",
-    "website": "https://anaya.io",
-    "address": "Bangalore, India",
-    "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
-    "coverUrl": "https://images.unsplash.com/photo-1551434678-e076c223a692",
+    "username": "ameen-afsal",
+    "name": "Ameen Afsal U",
+    "headline": "CEO - Skillmount | Founder - Grow Learn",
+    "phone": "+91 99460 99619",
+    "phoneE164": "+919946099619",
+    "email": "ameen@skillmount.com",
+    "website": "https://skillmount.com",
+    "address": "Skillmount Education, First Floor, City Centre, Tirur, Kerala 676101",
+    "avatarUrl": "https://lh3.googleusercontent.com/d/1oN7Wa8mlT4mPJUm6-OjwXmtwJineV95t=w1000",
+    "coverUrl": "https://lh3.googleusercontent.com/d/1jA6lrvMj9oMZrC75LclOYM6MgFAZ8iA6=w1000",
+    "aboutImage": "https://lh3.googleusercontent.com/d/144Dwa4hTaaDmvmhlOGg-wHCIljqefFIN=w1000",
+    "about": "As a founder and product visionary, I thrive at the intersection of business strategy and human-centered design. With over a decade of experience scaling high-growth startups, I've led cross-functional teams to build products that not only solve real-world problems but also resonate emotionally with users.\n\nI believe in leading by example, fostering a culture of continuous learning, and pushing the boundaries of what's possible in the digital space.",
+
     "socials": {
-      "linkedin": "https://linkedin.com/in/anaya",
-      "instagram": "https://instagram.com/anaya",
-      "facebook": "https://facebook.com/anaya",
-      "youtube": "https://youtube.com/@anaya"
+      "linkedin": "www.linkedin.com/in/ameenafsalu",
+      "instagram": "https://www.instagram.com/ameenafsal_u/?hl=en",
+      "facebook": "https://www.facebook.com/share/1BBdsJHJwn"
     },
     "brands": [
       {
         "id": "skillmount",
         "name": "Skillmount",
-        "logo": "https://skillmount.com/logs.png",
+        "logo": "https://lh3.googleusercontent.com/d/1DfSzst35rhktCrEdiQlxB1DKEdQMc3ZM=w1000",
         "contact": {
-          "phone": "+91 9645 171 510",
-          "phoneE164": "+919645171510",
-          "email": "info@skillmount.in",
-          "website": "https://skillmount.in",
-          "address": "Malappuram, Kerala"
+          "phone": "+91 99460 99619",
+          "phoneE164": "+919946099619",
+          "email": "ameen@skillmount.com",
+          "website": "https://skillmount.com",
+          "address": "Skillmount Education, First Floor, City Centre, Tirur, Kerala 676101"
         }
       },
       {
         "id": "grow-learn",
         "name": "Grow Learn",
-        "logo": "https://static.wixstatic.com/media/c39649_84cbf14ad79e4bc78451c373528b3343~mv2.png/v1/fill/w_254,h_102,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GROW%20LEARN%20LOGO%20FINAL%20PNG2-01.png",
+        "logo": "https://lh3.googleusercontent.com/d/1hFi_yMcYosOrhhDYqcPqsbKNb5jhlTIz=w1000",
         "contact": {
-          "phone": "+91 91234 56789",
-          "phoneE164": "+919123456789",
-          "email": "hello@growlearn.in",
-          "website": "https://growlearn.in",
-          "address": "Kozhikode, Kerala"
+          "phone": "+91 99460 99619",
+          "phoneE164": "+919946099619",
+          "email": "ameen@skillmount.com",
+          "website": "https://www.growlearn.education",
+          "address": "Nexx Grow Learn LLP, Door No 61/1008 A, 3rd Floor,Royal Enclave, Near Kurial Line, Cherooty Rd, Calicut Courts,Kozhikode, 673032, Kerala"
         }
       }
     ],
-    "gallery": [
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=600",
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600",
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=600",
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=600",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400",
-      "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&q=80&w=600"
-    ]
-  },
-  {
-    "id": "3",
-    "username": "harsh-verma",
-    "name": "Harsh Verma",
-    "headline": "Consultant | Operations",
-    "phone": "+91 91234 56789",
-    "phoneE164": "+919123456789",
-    "email": "harsh@consulting.in",
-    "website": "https://harshconsults.com",
-    "address": "Delhi, India",
-    "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-    "coverUrl": "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
-    "socials": {
-      "linkedin": "https://linkedin.com/in/harsh",
-      "instagram": "https://instagram.com/harsh",
-      "facebook": "https://facebook.com/harsh",
-      "youtube": "https://youtube.com/@harsh"
-    },
-    "brands": [],
     "gallery": [
       "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=400",
