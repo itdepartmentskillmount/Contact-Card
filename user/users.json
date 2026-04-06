@@ -75,6 +75,10 @@
     "headline": "CEO - Skillmount | Founder - Grow Learn",
     "phone": "+91 99460 99619",
     "phoneE164": "+919946099619",
+    "secondaryPhone": "+971 50 278 0025",
+    "secondaryPhoneE164": "+971502780025",
+    "whatsappPhone": "+91 99460 99619",
+    "whatsappPhoneE164": "+919946099619",
     "email": "ameen@skillmount.com",
     "website": "https://skillmount.com",
     "address": "Skillmount Education, First Floor, City Centre, Tirur, Kerala 676101",
@@ -96,6 +100,10 @@
         "contact": {
           "phone": "+91 99460 99619",
           "phoneE164": "+919946099619",
+          "secondaryPhone": "+971 50 278 0025",
+          "secondaryPhoneE164": "+971502780025",
+          "whatsappPhone": "+91 99460 99619",
+          "whatsappPhoneE164": "+919946099619",
           "email": "ameen@skillmount.com",
           "website": "https://skillmount.com",
           "address": "Skillmount Education, First Floor, City Centre, Tirur, Kerala 676101"
@@ -108,6 +116,10 @@
         "contact": {
           "phone": "+91 99460 99619",
           "phoneE164": "+919946099619",
+          "secondaryPhone": "+971 50 278 0025",
+          "secondaryPhoneE164": "+971502780025",
+          "whatsappPhone": "+91 99460 99619",
+          "whatsappPhoneE164": "+919946099619",
           "email": "ameen@skillmount.com",
           "website": "https://www.growlearn.education",
           "address": "Nexx Grow Learn LLP, Door No 61/1008 A, 3rd Floor,Royal Enclave, Near Kurial Line, Cherooty Rd, Calicut Courts,Kozhikode, 673032, Kerala"
