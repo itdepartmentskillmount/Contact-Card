@@ -125,10 +125,11 @@
       nameEl.style.height = 'auto';
 
       const headlineEl = document.getElementById('cardHeadline');
-      headlineEl.textContent = currentUser.headline;
+      headlineEl.innerHTML = currentUser.headline ? currentUser.headline.replace(/\s*\|\s*/g, '<br>') : '';
       headlineEl.classList.remove('skeleton');
       headlineEl.style.minWidth = 'auto';
       headlineEl.style.height = 'auto';
+      headlineEl.style.lineHeight = '1.4';
 
       document.title = `${currentUser.name} Contact Card`;
 

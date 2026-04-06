@@ -139,7 +139,7 @@
 
         // Set Headline
         const headlineEl = document.getElementById('aboutHeadline');
-        headlineEl.textContent = currentUser.headline || '';
+        headlineEl.innerHTML = currentUser.headline ? currentUser.headline.replace(/\s*\|\s*/g, '<br>') : '';
         headlineEl.classList.remove('skeleton');
 
         // Set About Text
