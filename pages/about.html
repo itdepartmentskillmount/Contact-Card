@@ -102,6 +102,11 @@
       return null;
     }
 
+    function redirectToNotFound(username) {
+      const encoded = encodeURIComponent(username || '');
+      window.location.href = `./not-found.html${encoded ? `?username=${encoded}` : ''}`;
+    }
+
     function goBack() {
       const username = getUsernameFromUrl();
       if (username) {
@@ -112,6 +117,12 @@
     }
 
     async function renderAbout() {
+      const username = getUsernameFromUrl();
+      if (!username) {
+        redirectToNotFound(null);
+        return;
+      }
+
       let users = [];
       try {
         const res = await fetch('../user/users.json', { cache: 'no-store' });
@@ -120,8 +131,12 @@
         console.error('Failed to load user/users.json', e);
       }
 
-      const username = getUsernameFromUrl();
-      const currentUser = (username ? users.find(u => u.username === username) : null) || users[0];
+      const matchedUser = users.find(u => u.username === username);
+      if (!matchedUser) {
+        redirectToNotFound(username);
+        return;
+      }
+      const currentUser = matchedUser;
 
       if (currentUser) {
         // Set Image (from JSON)

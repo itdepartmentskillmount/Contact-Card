@@ -89,6 +89,11 @@
       try { return decodeURIComponent(raw); } catch { return raw; }
     }
 
+    function redirectToNotFound(username) {
+      const encoded = encodeURIComponent(username || '');
+      window.location.href = `./pages/not-found.html${encoded ? `?username=${encoded}` : ''}`;
+    }
+
     function normalizeE164(phone) {
       if (!phone) return '';
       const s = String(phone).trim();
@@ -99,13 +104,24 @@
 
     async function init() {
       const username = getUsernameFromUrl();
+      if (!username) {
+        redirectToNotFound(null);
+        return;
+      }
+
       let users = [];
       try {
         const res = await fetch('./user/users.json', { cache: 'no-store' });
         users = await res.json();
       } catch (e) { console.error('Failed to load user/users.json', e); return; }
 
-      currentUser = (username ? users.find(u => u.username === username) : null) || users[0];
+      const matchedUser = users.find(u => u.username === username);
+      if (!matchedUser) {
+        redirectToNotFound(username);
+        return;
+      }
+
+      currentUser = matchedUser;
       if (currentUser && currentUser.brands && currentUser.brands.length > 0) {
         currentBrand = currentUser.brands[0];
       } else {

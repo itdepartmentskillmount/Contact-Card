@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Not Found</title>
+  <link rel="icon" type="image/svg+xml" href="https://skillmount.com/icons/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container" style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <div style="width: 100%; max-width: 340px; text-align: center;">
+      <div style="width: 72px; height: 72px; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color);">
+        <i class="fa-solid fa-user-slash" style="font-size: 28px; color: var(--text-primary);"></i>
+      </div>
+      <h1 style="font-size: 24px; margin: 0 0 10px; color: var(--text-primary);">Profile Not Found</h1>
+      <p id="notFoundMessage" style="font-size: 13px; line-height: 1.6; color: var(--text-muted); margin: 0 0 24px;">
+        The profile you requested does not exist.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    (function initNotFoundPage() {
+      const params = new URLSearchParams(window.location.search);
+      const username = params.get('username');
+
+      const msg = document.getElementById('notFoundMessage');
+      if (!username) {
+        msg.textContent = 'A valid "username" query parameter is required to view a profile.';
+        return;
+      }
+
+      msg.textContent = `No profile was found for username "${username}".`;
+    })();
+  </script>
+</body>
+
+</html>

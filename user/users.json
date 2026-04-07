@@ -6,18 +6,18 @@
     "headline": "Investor | Director - Skillmount | Grow Learn",
     "phone": "+91 9645 171 510",
     "phoneE164": "+919645171510",
-    "email": "rizwan@skillmount.in",
-    "website": "https://skillmount.in",
-    "address": "Malappuram, Kerala, India",
-    "avatarUrl": "https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "coverUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
-    "aboutImage": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1000",
+    "whatsappPhone": "9645171510",
+    "whatsappPhoneE164": "+919645171510",
+    "email": "coo@skillmount.com",
+    "website": "https://skillmount.com",
+    "address": "Skillmount Education, 1st Floor, City Centre, Tirur, Malappuram-676101.",
+    "avatarUrl": "https://lh3.googleusercontent.com/d/1IN8wbfUk1MFLT0P9JaPy4Ixo9iEPBvvK=w1000",
+    "coverUrl": "https://lh3.googleusercontent.com/d/1jA6lrvMj9oMZrC75LclOYM6MgFAZ8iA6=w1000",
+    "aboutImage": "https://lh3.googleusercontent.com/d/1dsRXNv_bZbWjWnssSJ7AbcKGLimJ0Nr-=w1000",
     "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\n\nIt was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     "socials": {
-      "linkedin": "https://linkedin.com/in/rizwan",
-      "instagram": "https://instagram.com/rizwan",
-      "facebook": "https://facebook.com/rizwan",
-      "youtube": "https://youtube.com/@rizwan"
+      "linkedin": "https://www.linkedin.com/in/muhammed-rizwan-k-k?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "instagram": "https://www.instagram.com/riz_wa_n?igsh=MWJoaXdlbHJpYmQ1dA=="
     },
     "brands": [
       {
@@ -27,15 +27,13 @@
         "contact": {
           "phone": "+91 9645 171 510",
           "phoneE164": "+919645171510",
-          "email": "info@skillmount.in",
-          "website": "https://skillmount.in",
-          "address": "Malappuram, Kerala"
+          "email": "coo@skillmount.com",
+          "website": "https://skillmount.com",
+          "address": "Skillmount Education, 1st Floor, City Centre, Tirur, Malappuram-676101."
         },
         "socials": {
-          "linkedin": "https://linkedin.com/company/skillmount",
-          "instagram": "https://instagram.com/skillmount",
-          "facebook": "https://facebook.com/skillmount",
-          "youtube": "https://youtube.com/@skillmount"
+          "linkedin": "https://www.linkedin.com/in/muhammed-rizwan-k-k?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+          "instagram": "https://www.instagram.com/riz_wa_n?igsh=MWJoaXdlbHJpYmQ1dA=="
         }
       },
       {
@@ -43,22 +41,21 @@
         "name": "Grow Learn",
         "logo": "https://static.wixstatic.com/media/c39649_84cbf14ad79e4bc78451c373528b3343~mv2.png/v1/fill/w_254,h_102,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GROW%20LEARN%20LOGO%20FINAL%20PNG2-01.png",
         "contact": {
-          "phone": "+91 91234 56789",
-          "phoneE164": "+919123456789",
-          "email": "hello@growlearn.in",
-          "website": "https://growlearn.in",
-          "address": "Kozhikode, Kerala"
+          "phone": "+91 9645 171 510",
+          "phoneE164": "+919645171510",
+          "email": "coo@skillmount.com",
+          "website": "https://www.growlearn.education",
+          "address": "Nexx Grow Learn LLP, Door No 61/1008 A, 3rd Floor,Royal Enclave, Near Kurial Line, Cherooty Rd, Calicut Courts,Kozhikode, 673032, Kerala"
         },
         "socials": {
-          "linkedin": "https://linkedin.com/company/growlearn",
-          "instagram": "https://instagram.com/growlearn",
-          "facebook": "https://facebook.com/growlearn"
+          "linkedin": "https://www.linkedin.com/in/muhammed-rizwan-k-k?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+          "instagram": "https://www.instagram.com/riz_wa_n?igsh=MWJoaXdlbHJpYmQ1dA=="
         }
       }
     ],
     "gallery": [
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=600",
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=400",
+      "https://lh3.googleusercontent.com/d/1dsRXNv_bZbWjWnssSJ7AbcKGLimJ0Nr-=w1000",
+      "https://lh3.googleusercontent.com/d/1jA6lrvMj9oMZrC75LclOYM6MgFAZ8iA6=w1000",
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=400",
       "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=600",
@@ -86,7 +83,6 @@
     "coverUrl": "https://lh3.googleusercontent.com/d/1jA6lrvMj9oMZrC75LclOYM6MgFAZ8iA6=w1000",
     "aboutImage": "https://lh3.googleusercontent.com/d/144Dwa4hTaaDmvmhlOGg-wHCIljqefFIN=w1000",
     "about": "Ameen Afsal Unniyangal is a Director and CEO with deep experience in Islamic Finance and credit risk management, developed through his professional journey in the UAE banking sector, including Abu Dhabi Islamic Bank (ADIB). His background includes credit assessment, exposure analysis, and fraud identification—building a strong foundation in risk-based decision-making.\n\nAt Skillmount, he leads business strategy and governance while staying closely involved in execution—overseeing operations, partnerships, performance monitoring, budgeting, and cross-functional alignment. His focus is on building a learning platform that is practical, scalable, and aligned with real market outcomes across the UAE and GCC.\n\nHe believes sustainable growth comes from strong fundamentals: clear vision, ethical leadership, disciplined systems, and teams that deliver consistently.",
-
     "socials": {
       "linkedin": "https://www.linkedin.com/in/ameenafsalu",
       "instagram": "https://www.instagram.com/ameenafsal_u/?hl=en",
