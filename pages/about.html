@@ -107,26 +107,14 @@
     </div>
   </div>
 
+  <script src="../user/username.js"></script>
   <script>
-    function getUsernameFromUrl() {
-      const params = new URLSearchParams(window.location.search);
-      const explicit = params.get('username');
-      if (explicit) return explicit;
-      return null;
-    }
-
     function redirectToNotFound(username) {
-      const encoded = encodeURIComponent(username || '');
-      window.location.href = `./not-found.html${encoded ? `?username=${encoded}` : ''}`;
+      window.location.href = notFoundUrl('./not-found.html', username);
     }
 
     function goBack() {
-      const username = getUsernameFromUrl();
-      if (username) {
-        window.location.href = `../index.html?username=${username}`;
-      } else {
-        window.location.href = '../index.html';
-      }
+      window.location.href = profileUrl('../index.html');
     }
 
     async function renderAbout() {

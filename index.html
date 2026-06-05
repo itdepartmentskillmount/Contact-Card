@@ -75,23 +75,14 @@
 
   </div>
 
+  <script src="./user/username.js"></script>
   <script>
     let currentUser = null;
     let currentBrand = null;
     let currentAction = 'call'; // 'call', 'whatsapp', 'email', 'save'
 
-    function getUsernameFromUrl() {
-      const params = new URLSearchParams(window.location.search);
-      const explicit = params.get('username');
-      if (explicit) return explicit;
-      const raw = window.location.search.replace(/^\?/, '').trim();
-      if (!raw) return null;
-      try { return decodeURIComponent(raw); } catch { return raw; }
-    }
-
     function redirectToNotFound(username) {
-      const encoded = encodeURIComponent(username || '');
-      window.location.href = `./pages/not-found.html${encoded ? `?username=${encoded}` : ''}`;
+      window.location.href = notFoundUrl('./pages/not-found.html', username);
     }
 
     function normalizeE164(phone) {
@@ -497,21 +488,11 @@ END:VCARD`;
     }
 
     function openGalleryPage() {
-      const username = getUsernameFromUrl();
-      if (username) {
-        window.location.href = `./pages/gallery.html?username=${username}`;
-      } else {
-        window.location.href = './pages/gallery.html';
-      }
+      window.location.href = profileUrl('./pages/gallery.html');
     }
 
     function openAboutPage() {
-      const username = getUsernameFromUrl();
-      if (username) {
-        window.location.href = `./pages/about.html?username=${username}`;
-      } else {
-        window.location.href = './pages/about.html';
-      }
+      window.location.href = profileUrl('./pages/about.html');
     }
 
     init();
