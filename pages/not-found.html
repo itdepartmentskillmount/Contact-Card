@@ -26,14 +26,16 @@
     </div>
   </div>
 
+  <script src="../user/username.js"></script>
   <script>
     (function initNotFoundPage() {
-      const params = new URLSearchParams(window.location.search);
-      const username = params.get('username');
-
+      const username = getUsernameFromUrl();
       const msg = document.getElementById('notFoundMessage');
+
       if (!username) {
-        msg.textContent = 'A valid "username" query parameter is required to view a profile.';
+        msg.textContent = isSubdomainProfileHost()
+          ? 'This profile subdomain is not configured.'
+          : 'A valid username is required to view a profile.';
         return;
       }
 
